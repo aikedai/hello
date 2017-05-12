@@ -1,0 +1,28 @@
+{
+  "name": "week9lab",
+  "version": "1.0.0",
+  "description": "for week nine's' lab",
+  "main": "revserver.js",
+  "scripts": {
+    "test": "9696"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "9696"
+  ],
+  "author": "Aike Dai",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "path": "^0.12.7",
+    "pug": "^2.0.0-beta11",
+    "express-session":"^1.15.0",
+	"mongoose": "^4.3.0"
+  },
+  "devDependencies": {}
+}
