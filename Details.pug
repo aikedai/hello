@@ -1,0 +1,59 @@
+doctype html
+
+html(lang="en")
+head
+	title  Detailed statics of #{title}
+link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+link(rel='stylesheet' type='text/css' href='/css/indexstyle.css' media='screen')
+script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', type='text/javascript')
+script(src='https://cdn.bootcss.com/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js', type='text/javascript')
+script(src='http://code.highcharts.com/highcharts.js' type='text/javascript')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+
+body
+h2(class="text-success") The total number of revisions for  #{title} :  #{details[0].numOfEdits}
+
+h4(class="text-warning") The Top Five Users of #{title}:
+
+span(class="glyphicon glyphicon-user") &nbsp 
+a(action='/getMoreDetails' method='GET') #{details[1]._id} &nbsp
+span(class="badge") #{details[1].numOfEdits}
+
+br
+span(class="glyphicon glyphicon-user") &nbsp 
+a #{details[2]._id} &nbsp
+span(class="badge") #{details[2].numOfEdits}
+
+br
+span(class="glyphicon glyphicon-user") &nbsp 
+a #{details[3]._id} &nbsp
+span(class="badge") #{details[3].numOfEdits}
+
+br
+span(class="glyphicon glyphicon-user") &nbsp 
+a #{details[4]._id} &nbsp
+span(class="badge") #{details[4].numOfEdits}
+
+br
+span(class="glyphicon glyphicon-user") &nbsp 
+a #{details[5]._id} &nbsp
+span(class="badge") #{details[5].numOfEdits}
+
+h4
+	form(action='/getDetails' method='GET')
+			label(class="text-info") Search for the other articles:
+			input(id="ti" type="text" name="title" placeholder="please input another title" autofocus)
+			|
+			input(type="submit" value = "Search" class="btn btn-success btn-sm")
+			|  
+			input(type="reset" value = "Clear" class="btn btn-danger btn-sm" title="Delete the input")
+script(src='/titleList.js', type='text/javascript')
+
+input(type="button" id="eve" value="Click Here to Inspect the Piechart of Revision Statistics" class="btn btn-default btn-lg btn-block") 
+h3#ba(class="text-warning") The Barchart of Revision Statistics of #{title}:
+div#bar
+script(src='/highcharts/barchartAn.js', type='text/javascript')
+h3#pi(class="text-warning") The Piechart of Revision Statistics of #{title}:
+div#pie
+script(src='/highcharts/piechartAn.js', type='text/javascript')
+script(src='/chartSwift.js', type='text/javascript')
